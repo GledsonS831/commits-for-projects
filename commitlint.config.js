@@ -1,5 +1,5 @@
 module.exports = {
-    parserPreset: 'conventional-changelog-conventionalcommits',
+    extends: ['@commitlint/config-conventional'],
     rules: {
         'body-leading-blank': [1, 'always'],
         'body-max-line-length': [2, 'always', 100],
@@ -10,28 +10,29 @@ module.exports = {
         'subject-case': [
             2,
             'never',
-            ['sentence-case', 'start-case', 'pascal-case', 'upper-case']
+            ['sentence-case', 'start-case', 'pascal-case', 'upper-case'],
         ],
-        'subject-empty': [2, 'never'],
+        'subject-empty': [2, 'always'],
         'subject-full-stop': [2, 'never', '.'],
         'type-case': [2, 'always', 'lower-case'],
-        'type-empty': [2, 'never'],
+        'type-empty': [2, 'always'],
         'type-enum': [
             2,
             'always',
             [
-                'build',
-                'chore',
-                'ci',
-                'docs',
-                'feat',
-                'fix',
-                'perf',
-                'refactor',
-                'revert',
-                'style',
-                'test'
-            ]
-        ]
-    }
+                ':building_construction: build',
+                ':hammer: chore',
+                ':heavy_plus_sign: ci',
+                ':book: docs',
+                ':collision: feat',
+                ':beetle: fix',
+                ':trophy: perf',
+                ':pencil2: refactor',
+                ':back: revert',
+                ':eyeglasses: style',
+                ':white_check_mark: test',
+                ':x: delete'
+            ],
+        ],
+    },
 };
