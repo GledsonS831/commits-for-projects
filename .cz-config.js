@@ -36,7 +36,7 @@ module.exports = {
     ],
 
     scopes: [
-        { name: 'web' },
+        { name: '' },
     ],
 
     allowTicketNumber: false,
